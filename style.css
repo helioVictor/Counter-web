@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Orbitron';
+    --primary-color: #423576;
+    --secundary-color: #181818;
+    --bg-color: #fcfcfc;
+    --slider-bt-color: #fcfcfc;
+    --button-font-color: #fcfcfc;
+    --button-color: #08afd4;
+    --hover-color: #0f4678;
+    --font-color: #a5356d;
+    --shadow: rgba(10, 40, 120, 0.8);
+    --shadow-pressed: rgba(0, 19, 70, 0.9);
+    --uncheck: rgba(211, 211, 211, 0.9);
+}
+
+[data-theme="dark"] {
+    --primary-color: #423576;
+    --secundary-color: #fcfcfc;
+    --bg-color: #181818;
+    --slider-bt-color: rgba(0, 19, 70, 0.9);
+    --button-font-color: #fcfcfc;
+    --button-color: #423576;
+    --hover-color: #0f4678;
+    --font-color: #a5356d;
+    --shadow: rgba(10, 40, 120, 0.8);
+    --shadow-pressed: rgba(0, 19, 70, 0.9);
+    --uncheck: rgba(211, 211, 211, 0.9);
+}
+
+
+
+body,
+html {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-around;
+
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-color);
+    overflow: hidden;
+
+    width: 100vw;
+    min-width: 200px;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    font-size: 2rem;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0;
+    color: var(--secundary-color);
+}
+
+div#mode {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 1.3rem;
+    color: var(--secundary-color);
+}
+
+.switch {
+    position: relative;
+    display: block;
+    float: right;
+    margin: 2rem;
+    width: 4rem;
+    height: 2.4rem;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--uncheck);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "☀";
+    font-size: 1.2rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider:before {
+    content: "☾";
+    color: var(--button-font-color);
+    background-color: var(--slider-bt-color);
+    
+}
+
+input:checked + .slider {
+background-color: var(--hover-color);
+}
+
+input:focus + .slider {
+box-shadow: 0 0 0.1rem var(--button-color);
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(1.6rem);
+-ms-transform: translateX(1.6rem);
+transform: translateX(1.6rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 3.4rem;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+input[type="number"] {
+    font-family: 'Orbitron';
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none;
+}
+
+#counter {
+    display: flex;
+    flex-wrap: wrap-reverse;
+
+    justify-content: space-evenly;
+
+    min-width: 20rem;
+    
+}
+
+#counter input{
+    order: 1;
+    width: 100%;
+    max-width: 100vw;
+    text-align: center;
+    font-size: 7rem;
+    color: var(--font-color);
+    background-color: transparent;
+    border: none;
+    margin-bottom: 4rem;
+    overflow-x: hidden;
+}
+
+#counter button {
+    font-family: 'Orbitron';
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 4rem;
+    text-align: center;
+    cursor: pointer;
+
+    box-shadow: 0.4rem 0.4rem var(--shadow);
+
+    background-color: var(--button-color);
+    color: var(--button-font-color);
+}
+
+#counter button:hover {
+    transition-duration: 0.3s;
+    opacity: 0.9;
+    background-color: var(--hover-color);
+}
+
+#counter button:active {
+    background-color: var(--primary-color);
+    box-shadow: 0.2rem 0 0.2rem 0 var(--shadow-pressed);
+    transform: translateY(0.2rem);
+}
+
+footer {
+    align-self: center;
+}
+
+footer::after {
+    content: "Made with ♥ by Hélio Soares";
+    color: var(--secundary-color);
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    
+}

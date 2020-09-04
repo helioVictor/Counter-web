@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Counter</h1>
+        <div id="mode">
+            <p>Mode:</p>
+            <label class="switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+    <main>
+        <div id="counter">
+            <button onclick="sub()" id="subButton">-</button>
+            <input placeholder="0" type="number" id="counter-input" min=0/>
+            <button onclick="add()" id="addButton">+</button>
+        </div>
+    </main>
+    <footer>
+        <p></p>
+    </footer>      
+<script src="index.js"></script>
+</body>
+</html>
